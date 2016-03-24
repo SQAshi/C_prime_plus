@@ -123,6 +123,7 @@ int L4_8(void)
 int L4_10(void)
 {
 
+	printf("**%5d**%5.3d**%05d**%05.3d**\n", 1105, 11, 1105, 11);
 	printf("[%2s]\n", BLURB);
 	printf("[%24s]\n", BLURB);
 	printf("[%24.5s]\n", BLURB);
@@ -190,7 +191,7 @@ int L4_try(void)
 	char a;
 
 	printf("please:");
-	scanf("  %c", &a);
+	scanf("%c", &a);
 	//scanf(" %c", &a);
 	printf("%c", a);
 	return 0;
@@ -221,5 +222,118 @@ int L4_17(void)
 	printf("The last integer was %d\n", n);
 
 	return 0;
+
+}
+
+int Ex4_1(void) {
+	char last[20], first[20];
+
+	printf("please enter your first name:\n");
+	scanf("%s", first);
+	printf("please enter your last name:\n");
+	scanf("%s", last);
+	printf("Hi, your last name is %s, and your first name is %s\n", last, first);
+
+	return 0;
+}
+
+int Ex4_2(void) {
+
+	char first[20];
+
+	printf("Please enter your first name:\n");
+	scanf("%s", first);
+	printf("your name is \"%s\" \n", first);
+	printf("name is \"%20s\" \n", first);
+	printf("name is \"%-20s\" \n", first);
+	printf("name is %*s", strlen(first) + 3, first);
+
+	return 0;
+	
+}
+
+int Ex4_3(void) {
+
+	float num;
+
+	printf("Please enter a float number:\n");
+	scanf("%f", &num);
+	printf("the num is %.1f\n", num);
+	printf("the num is %.1e\n", num);
+	printf("the num is %+.3f\n", num);
+	printf("the num is %.3E\n", num);
+
+	return 0;
+}
+
+int Ex4_4(void) {
+
+	char name[40];
+	float height;
+
+	printf("Please enter your name and height in inches:\n");
+	scanf("%s %f", name, &height);
+	printf("%s, you are %.3f feet tall", name, height / 12.0);
+
+	return 0;
+}
+
+int Ex4_5(void) {
+
+	float file_size, speed, time;
+
+	printf("Please enter the network speed(Mbs): \n");
+	scanf("%f", &speed);
+	printf("The size of your file:\n");
+	scanf("%f", &file_size);
+	printf("At %.2f megabits per second, a file of %.2f megabytes\n", speed, file_size);
+	printf("downloads in %.2f seconds", file_size*8.0 / speed);
+
+	return 0;
+}
+
+int Ex4_6(void) {
+
+	char first[40], last[40];
+
+	printf("Please enter your first name:\n");
+	scanf("%s", first);
+	printf("Please enter your last name:\n");
+	scanf("%s", last);
+	printf("%s %s\n", first, last);
+	printf("%*d %*d\n", 
+		strlen(first), strlen(first), strlen(last), strlen(last));
+	printf("%s %s\n", first, last);
+	printf("%-*d %-*d\n", 
+		strlen(first), strlen(first), strlen(last), strlen(last));
+	return 0;
+
+}
+
+int Ex4_7(void) {
+
+	double n1 = 1.0 / 3.0;
+	float n2 = 1.0 / 3.0;
+
+	printf("%.4f %.12f %.16f \n", n1, n1, n1);
+	printf("%.4f %.12f %.16f \n", n2, n2, n2);
+	printf("FLT_DIG: %d\n", FLT_DIG);
+	printf("DBL_DIG: %d\n", DBL_DIG);
+	return 0;
+
+
+}
+
+int Ex4_8(void) {
+
+	float mile, gallons;
+	const float liters = 3.785;
+	const float kilometers = 1.609;
+
+	printf("Please enter your miles and gallons of gasoline consumred:\n");
+	scanf("%f %f", &mile, &gallons);
+
+	printf("miles per gallon value is %.1f\n", mile / gallons);
+	printf("liters per 100 km value is %.1f", gallons*3.785 / (mile*1.609));
 
 }

@@ -88,10 +88,10 @@ int L5_8(void)
 	real deal;
 	size_t intsize;
 
-	intsize = sizeof(int);
+	intsize = sizeof(int); //4byte
 	deal = 0.05;
 	printf("n = %d, n has %zd bytes; all ints have %zd bytes.\n",
-		n, sizeof n, intsize);
+		n, sizeof n, intsize); 
 	printf("%.2f", deal);
 
 	return 0;
